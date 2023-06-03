@@ -6,7 +6,7 @@ var storage=multer.diskStorage({
   filename:(req,file,path)=>
   {
     var ext=file.originalname.substring(file.originalname.lastIndexOf("."));
-    proppatch(null,uuid4+ext)
+    path(null,uuid4()+ext)
   }
 })
 
