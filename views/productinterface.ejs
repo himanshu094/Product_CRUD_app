@@ -79,7 +79,7 @@
 </style>
 
 <body>
-  <form action="/product/productsubmit" method="post">
+  <form action="/product/productsubmit" enctype="multipart/form-data" method="post">
     <div class="maincontainer">
         <div class="box">
             <div class="headingdiv">
@@ -152,7 +152,7 @@
                 
                 <div class="row  gap">
                   <div class="col-md-12">
-                    <%=message%>
+                       <%=message%>
                   </div>
                 </div>
 

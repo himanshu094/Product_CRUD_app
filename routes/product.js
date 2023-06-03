@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var pool=require('./pool')
+var value=0;
 
 /* GET home page. */
 router.get('/productinterface', function(req, res, next) {
-  res.render('productinterface', { message: '' });
+  res.render('productinterface', {message:''});
 });
 
 router.post('/productsubmit', function(req, res, next) {
@@ -20,7 +21,7 @@ router.post('/productsubmit', function(req, res, next) {
       }
       else
       {
-        res.render("productinterface",{message:'Product Submitted Successfully',value:1})  
+        res.render("productinterface",{message:'Product Submitted Successfully',val:2})  
       }
     })
   }
