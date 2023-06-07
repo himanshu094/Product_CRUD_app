@@ -34,4 +34,48 @@ router.post('/productsubmit',upload.single('picture'), function(req, res, next) 
 
 });
 
+router.get('/fetchProductType', function(req, res, next) {
+  
+  try{
+    pool.query("select * from producttype",function(error,result){
+      if(error)
+      {
+        console.log("D Error",error);
+        res.status(200).json({});
+      }
+      else
+      {
+        res.status(200).json({result:result});
+      }
+    })
+  }
+  catch(e)
+  {
+    console.log("Error:",e);
+    res.render("productinterface",{message:'Server Error'}) 
+  }
+});
+
+router.get('/fetchProductCategory', function(req, res, next) {
+  
+  try{
+    pool.query("select * from productcategory where producttypeid=?",[req.query.typeid],function(error,result){
+      if(error)
+      {
+        console.log("D Error",error);
+        res.status(200).json({});
+      }
+      else
+      {
+        res.status(200).json({result:result});
+      }
+    })
+  }
+  catch(e)
+  {
+    console.log("Error:",e);
+    res.render("productinterface",{message:'Server Error'}) 
+  }
+});
+
 module.exports = router;

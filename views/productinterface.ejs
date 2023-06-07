@@ -96,10 +96,14 @@
 
                 <div class="row gap">
                   <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Product Type" name="producttypeid">
+                    <select class="form-select" name="producttypeid" aria-label="Default select example" id="producttypeid">
+                      <option selected>-Select Type-</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="Product Category" name="productcategoryid">
+                    <select class="form-select" name="productcategoryid" aria-label="Default select example" id="productcategoryid">
+                      <option selected>-Select Category-</option>
+                    </select>
                   </div>
                 </div>
 
@@ -161,3 +165,5 @@
     </div>
   </form>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="/javascripts/script.js"></script>
