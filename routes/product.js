@@ -78,4 +78,21 @@ router.get('/fetchProductCategory', function(req, res, next) {
   }
 });
 
+router.get("/fetch_all_products_to_display",function(req,res){
+   try{
+    pool.query("select * from product",function(error,result){
+      if(error){
+        console.log("D error:",error);
+        res.render("displayallproducts",{data:[],message:'Database Error'})
+      }else{
+        res.render("displayallproducts",{data:result})
+      }
+    })
+   }
+   catch(e){
+    console.log("Error:",e);
+    res.render("displayallproducts",{data:[],message:"Server Error"})
+   }
+})
+
 module.exports = router;
