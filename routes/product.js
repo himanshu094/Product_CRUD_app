@@ -95,4 +95,7 @@ router.get("/fetch_all_products_to_display",function(req,res){
    }
 })
 
+router.get("/login",function(req,res){
+  res.render("loginpage")
+})
 module.exports = router;
